@@ -11,11 +11,10 @@ export default function Hero() {
       <p className='text-lg flex flex-col'>Create your mood recored & track your daily mood every day of the year.</p>
       <div className='grid grid-cols-2 gap-4 justify-start w-fit'>
         <Link href="/dashboard"><Button text='Login' dark /></Link>
-        <Link href="/signup"><Button text='Sign Up' /></Link>
+        <Link href="/dashboard"><Button text='Sign Up' /></Link>
       </div>
-      <div>
-        <Calender/>
-      </div>
+      <Calender demo/>
     </div>
+   
   )
 }

@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import { Fugaz_One } from "@next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { AuthProvider } from "./context/AuthContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,7 +26,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`w-full max-width-[1000px] mx-auto text-sm sm:text-base min-h-screen flex flex-col text-slate-300 ${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <AuthProvider>      
+        <body className={`w-full max-width-[1000px] mx-auto text-sm sm:text-base min-h-screen flex flex-col text-slate-300 ${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div className="px-10">
           <header className="py-4 sm:py-8 flex items-center justify-start">
             <Link href="/"><h1 className={`${fugaz.className} text-2xl sm:text-3xl font-bold text-gradient`}>Emotion Project</h1></Link>
@@ -37,7 +39,7 @@ export default function RootLayout({ children }) {
           <p className={`${fugaz.className} text-gradient`}>Created by Isham S with <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">Next.js</a> & <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel</a>.</p>
         </footer> 
       </body>
-      
+      </AuthProvider>
     </html>
   );
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Button from './Button'
 import { fugazexp } from '@/app/layout'
+import Calender from './Calender'
 
 export default function Dashboard() {
  
@@ -29,7 +30,6 @@ export default function Dashboard() {
     <div className='flex flex-col flex-1'>
       <div className='grid gap-4 grid-cols-1 sm:grid-cols-3 sm:gap-0 mb-6 bg-indigo-900 p-6 rounded-2xl'>
         {Object.keys(statuses).map((status, statusIndex) => (
-          console.log(statusIndex, status, statuses[status]),
           <div key={statusIndex} className='flex flex-col items-start'>
             <div className='text-md font-bold'>{wordMapping[status]}</div>
             <div className={`${fugazexp.className} text-xl`}>{statuses[status]}</div>
@@ -48,6 +48,7 @@ export default function Dashboard() {
               </button>
             ))}
         </div>
+        <Calender demo/>
     </div>
     
   )}
